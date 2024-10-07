@@ -1,0 +1,25 @@
+#WHILE-LOOP STATEMNET
+
+DECLARE
+  i INTEGER := 1;
+  lo INTEGER := 10;
+  f INTEGER := 1;
+BEGIN
+  WHILE i <= lo LOOP
+    dbms_output.put_line(i);
+    i := i + f;
+  END LOOP;
+END;
+/
+
+#FOR-LOOP STATEMENT
+
+DECLARE
+  I INTEGER := 1;  
+  LO INTEGER := 10; 
+BEGIN
+  FOR K IN I .. LO LOOP
+    DBMS_OUTPUT.PUT_LINE(K);
+  END LOOP;
+END;
+/
