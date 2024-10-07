@@ -1,0 +1,56 @@
+#IF...THEN...ELSE
+DECLARE
+  a INT := 8;
+BEGIN 
+  IF a = 8 THEN
+    dbms_output.put_line('equal');
+  ELSE
+    dbms_output.put_line('not equal');
+  END IF;
+END;
+/
+
+#IF...ELSIF..ELSE..ENDIF
+DECLARE
+  a NUMBER(3) := 10;
+BEGIN
+  IF a > 65 THEN
+    dbms_output.put_line('grade of the student is A');
+  ELSIF a > 50 THEN
+    dbms_output.put_line('grade of the student is B');
+  ELSE
+    dbms_output.put_line('grade of the student is C');
+  END IF;
+
+  dbms_output.put_line('marks of the student is: ' || a);
+END;
+/
+
+#CASE STATEMENT
+
+DECLARE
+  grade CHAR(1) := 'A'; 
+BEGIN
+  CASE grade
+    WHEN 'A' THEN dbms_output.put_line('excellent');
+    WHEN 'B' THEN dbms_output.put_line('very good');
+    WHEN 'C' THEN dbms_output.put_line('good');
+    WHEN 'D' THEN dbms_output.put_line('satisfactory');
+    WHEN 'E' THEN dbms_output.put_line('poor');
+    ELSE dbms_output.put_line('failed');
+  END CASE;
+END;
+/
+
+
+
+
+
+
+
+
+
+
+
+
+
