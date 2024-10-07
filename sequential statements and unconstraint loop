@@ -1,0 +1,36 @@
+#sequential statemnets
+DECLARE
+  a NUMBER(2) := 30;
+BEGIN 
+  <<loopstart>>
+  -- while loop execution
+  WHILE a < 50 LOOP
+     dbms_output.put_line('value of a: ' || a);
+     a := a + 1;
+     
+     IF a = 35 THEN
+        a := a + 1;
+        GOTO loopstart;
+     END IF;
+  END LOOP;
+END;
+/
+
+#UNCONSTRAINT LOOP
+
+DECLARE
+    l_loop NUMBER := 0;
+BEGIN
+    dbms_output.put_line('before my loop');
+    LOOP
+        IF l_loop > 4 THEN
+            EXIT;
+        END IF;
+        
+        dbms_output.put_line('line: ' || l_loop || ' time');
+        l_loop := l_loop + 1;
+    END LOOP;
+    
+    dbms_output.put_line('after my loop');
+END;
+/
