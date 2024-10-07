@@ -1,0 +1,33 @@
+#GOTA STATEMENT
+
+DECLARE
+  a NUMBER := 30;
+BEGIN
+  <<LOOP_START>>
+  WHILE a < 50 LOOP
+    DBMS_OUTPUT.PUT_LINE('value of a: ' || a);
+    a := a + 1;
+
+    IF a = 35 THEN
+      GOTO LOOP_START;
+    END IF;
+  END LOOP;
+END;
+/
+
+
+#NULL STATEMMENT
+
+CREATE OR REPLACE PROCEDURE divide_it (
+  p_numerator IN NUMBER,
+  p_denominator IN NUMBER,
+  p_result OUT NUMBER
+) IS
+BEGIN
+  IF p_denominator = 0 THEN
+    p_result := NULL;
+  ELSE
+    p_result := p_numerator / p_denominator;
+  END IF;
+END;
+/
